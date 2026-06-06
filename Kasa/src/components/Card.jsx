@@ -1,11 +1,13 @@
-import logo from'../assets/hero.png'
 
-const Card = () => {
+
+const Card = (props) => {
+   console.log(props);
+   
     return (
-        <div>
-            <img src={logo} alt="logo" />
-            <h2>Logo de limage 
-            </h2>
+        <div className="card">
+            <img className="card__image" src={props.logement.cover} />
+            <h2 className="card__title">{props.logement.title}</h2>
+            
         </div>
     )
 }
