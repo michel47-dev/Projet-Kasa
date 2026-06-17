@@ -3,6 +3,7 @@ import Banner from "../components/Banner"
 import Card from "../components/Card"
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import imageHome from "../assets/banne.png";
 
 const Home = () => {
      console.log(logements);
@@ -11,7 +12,9 @@ const Home = () => {
         
 <div>
   <Header />
-  <Banner />
+  <Banner image={imageHome}
+  text="Chez vous, partout et ailleurs"
+  />
 
   <div className="home__cards">
     {logements.map(logement => (

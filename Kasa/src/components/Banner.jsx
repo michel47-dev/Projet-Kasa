@@ -1,10 +1,10 @@
-import logobanner from "../assets/banne.png"
 
-const Banner = () => {
+
+const Banner = ({image, text}) => {
     return (
         <div className="banner">
-            <img className="banner__img" src={logobanner} alt="logo du banner"/>
-            <p className="banner__paragraphe">Chez vous, partout et ailleurs</p>
+            <img className="banner__img" src={image} alt="logo du banner"/>
+            <p className="banner__paragraphe">{text}</p>
         </div>
 
     )
