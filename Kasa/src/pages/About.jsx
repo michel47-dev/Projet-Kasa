@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
+
 import Collapse from "../components/Collapse";
 import Banner from "../components/Banner";
 import imageabout from "../assets/banner2.png"
@@ -7,7 +7,7 @@ import imageabout from "../assets/banner2.png"
 const About = () => {
   return (
     <div>
-    <Header />
+   
    <Banner  image={imageabout} />
  
    
@@ -35,7 +35,7 @@ const About = () => {
      également des ateliers sur la sécurité domestique pour nos hôtes. "
      />
    
-   <Footer />
+  
     </div>
   )
 }
