@@ -6,7 +6,9 @@
   align-items: center;
   margin-top: 10px;
   padding-bottom: 20px;
-  
+  width: 100%;
+  height: auto;
+
   
 
 
@@ -14,6 +16,8 @@
     color: white;
     font-size: 24px;
    margin-top: 50px;
+   display: flex;
+   justify-content: center;
   
 
   }
@@ -21,4 +25,15 @@
   &__logo {
     padding-top: 40px;
   }
+}
+
+@media (max-width: 768px) {
+  .footer p{
+    width: 120px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+   
+  
 }

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-     max-width: 75%;
+     max-width: 89%;
   margin: 20px auto;
 
   width: 100%;
@@ -29,4 +29,23 @@
   }
 
 
+}
+
+@media (max-width: 768px) {
+  .header {
+    max-width: 90%;
+    margin: 20px auto;
+
+    &__logo {
+      width: 120px;
+    }
+
+    &__nav {
+      gap: 18px;
+      font-size: 16px;
+    }
+    &__link{
+      font-size: 16px;
+    }
+  }
 }

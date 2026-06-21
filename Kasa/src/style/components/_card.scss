@@ -1,16 +1,13 @@
 .home__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 340px);
-    gap: 70px;
-    background-color: #F6F6F6;
-    width: 75%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border-radius: 10px;
-    margin-bottom: 30px;
+      display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  background-color: #F6F6F6;
+  max-width: 85%;
+  width: 100%;
+  padding: 50px;
+  margin: 0 auto 30px;
+  border-radius: 25px;
 
 
 
@@ -18,12 +15,10 @@
 
 .card {
     height: 340px;
-    width: 340px;
-
-    position: relative;
-    overflow: hidden;
-
-    border-radius: 10px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 
 
     &__image {
@@ -37,7 +32,23 @@
         position: absolute;
         font-size: 18px;
         bottom: 5px;
-        color: #F6F6F6;
+        color:white;
+        padding-left: 10px;
 
     }
+}
+
+
+@media (max-width: 768px) {
+  .home__cards {
+    grid-template-columns: 1fr;
+    background-color: transparent;
+    padding: 0;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .card {
+    height: 255px;
+  }
 }

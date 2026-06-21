@@ -1,0 +1,38 @@
+.about{
+  max-width: 90%;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .about {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .about .banner {
+    width: 100%;
+  }
+
+  .about .banner img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .about .collapse {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .about .collapse__button {
+    width: 90%;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 5px;
+  }
+  .about .collapse__content{
+    font-size: 12px;
+ width: 85%;
+  }
+}
