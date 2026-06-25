@@ -11,8 +11,8 @@ const Home = () => {
         
 <div>
   
-  <Banner image={imageHome}
-  text="Chez vous, partout et ailleurs"
+  <Banner image={imageHome}  
+  text="Chez vous, partout et ailleurs"   
   />
 
   <div className="home__cards">

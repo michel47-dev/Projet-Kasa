@@ -9,9 +9,9 @@ const Collapse = ({ title, content }) => {
 
       <button
         className="collapse__button"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {title}
+        onClick={() => setIsOpen(!isOpen)} >
+      
+       <span>{title}</span>
 
         <i
           className={`fa-solid fa-chevron-up collapse__arrow ${isOpen ? "open" : ""}`}

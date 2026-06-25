@@ -2,13 +2,17 @@ import logements from "../data/logements.json";
 import { useParams } from "react-router-dom";
 import Collapse from "../components/Collapse";
 import { useState } from "react";
+import Error from "./Error";
 
 
 const Logement = () => {
     const { id } = useParams();
     const logement = logements.find((logement) => logement.id === id);
-    console.log(logement);
-    const [currentIndex, setCurrenIndex] = useState(0);
+     const [currentIndex, setCurrenIndex] = useState(0);
+    if (!logement) {
+        return <Error />
+    }
+   
     const nextSlide = () => {
         if (currentIndex === logement.pictures.length - 1) {
             setCurrenIndex(0);
@@ -24,6 +28,8 @@ const Logement = () => {
             setCurrenIndex(currentIndex - 1);
         }
     }
+
+    const stars = [1, 2, 3, 4, 5];
 
 
     return (
@@ -41,7 +47,7 @@ const Logement = () => {
                     <div className="logement__arrow logement__arrow--right" onClick={nextSlide}>
                         <i className="fa-solid fa-chevron-right"></i>
                     </div>
-                     <p className="logement__counter">{currentIndex + 1} / {logement.pictures.length}</p>
+                     <p className="logement__counter">{currentIndex +1} / {logement.pictures.length}</p>
                 </div>
 
                 <div className="logement__info">
@@ -54,6 +60,7 @@ const Logement = () => {
                                 <span key={tag} className="logement__tag">{tag}</span>
                             ))}
                         </div>
+
                     </div>
 
                     <div className="logement__right">
@@ -64,7 +71,7 @@ const Logement = () => {
                             />
                         </div>
                         <div className="logement__rating">
-                            {[1, 2, 3, 4, 5].map((star) => (
+                            {stars.map((star) => (
                                 <i key={star} className={star <= logement.rating ? "fa-solid fa-star active"
                                     : "fa-solid fa-star"
                                 } ></i>

@@ -4,12 +4,11 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-  <div>
-<Header />
-
+    <div className="app">
+  <Header />
   <Router />
   <Footer />
-  </div>
+</div>
   )
 }
 

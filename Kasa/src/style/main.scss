@@ -1,4 +1,4 @@
-@import "./base/base";
+
 @import "./components/header";
 @import "./components/banner";
 @import "./components/card";
@@ -8,7 +8,31 @@
 @import "./components/logements";
 @import "./components/about";
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+
 body{
     font-family: "Montserrat", sans-serif; ;
     margin: 0;
 }
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  #root {
+    background-color: #000000;
+  }
+
+  .app {
+    background-color: #ffffff;
+  }
+}
+
