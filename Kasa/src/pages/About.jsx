@@ -2,14 +2,14 @@
 
 import Collapse from "../components/Collapse";
 import Banner from "../components/Banner";
-import imageabout from "../assets/banner2.png"
+import imageAbout from "../assets/banner2.png"
 import collapses from "../data/collapse.json";
 
 const About = () => {
   return (
     <div className="about" >
    
-   <Banner  image={imageabout} />
+   <Banner  image={imageAbout} />
  
    
 {

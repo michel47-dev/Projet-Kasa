@@ -37,18 +37,28 @@ const Logement = () => {
             <div className="logement__content">
 
                 <div className="logement__carousel">
-                    <img className="logement__img" src={logement.pictures[currentIndex]} alt={logement.title} />
+    <img
+        className="logement__img"
+        src={logement.pictures[currentIndex]}
+        alt={logement.title}
+    />
 
-                    <div className="logement__arrow logement__arrow--left" onClick={prevSlide}>
+    {logement.pictures.length > 1 && (
+        <>
+            <div className="logement__arrow logement__arrow--left" onClick={prevSlide}>
+                <i className="fa-solid fa-chevron-left"></i>
+            </div>
 
-                        <i className="fa-solid fa-chevron-left"></i>
-                    </div>
+            <div className="logement__arrow logement__arrow--right" onClick={nextSlide}>
+                <i className="fa-solid fa-chevron-right"></i>
+            </div>
 
-                    <div className="logement__arrow logement__arrow--right" onClick={nextSlide}>
-                        <i className="fa-solid fa-chevron-right"></i>
-                    </div>
-                     <p className="logement__counter">{currentIndex +1} / {logement.pictures.length}</p>
-                </div>
+            <p className="logement__counter">
+                {currentIndex + 1} / {logement.pictures.length}
+            </p>
+        </>
+    )}
+</div>
 
                 <div className="logement__info">
 
