@@ -1,33 +1,19 @@
 import logements from "../data/logements.json";
 import { useParams } from "react-router-dom";
 import Collapse from "../components/Collapse";
-import { useState } from "react";
-import Error from "./Error";
+import { Navigate } from "react-router-dom";
+
+import Carousel from "../components/Carousel";
 
 
 const Logement = () => {
-    const { id } = useParams();
+    const { id } = useParams(); 
     const logement = logements.find((logement) => logement.id === id);
-     const [currentIndex, setCurrenIndex] = useState(0);
-    if (!logement) {
-        return <Error />
-    }
    
-    const nextSlide = () => {
-        if (currentIndex === logement.pictures.length - 1) {
-            setCurrenIndex(0);
-        } else {
-            setCurrenIndex(currentIndex + 1);
-        }
+    if (!logement) {
+        return <Navigate to="/error" replace />;
     }
 
-    const prevSlide = () => {
-        if (currentIndex === 0) {
-            setCurrenIndex(logement.pictures.length - 1);
-        } else {
-            setCurrenIndex(currentIndex - 1);
-        }
-    }
 
     const stars = [1, 2, 3, 4, 5];
 
@@ -36,29 +22,7 @@ const Logement = () => {
         <div className="logement">
             <div className="logement__content">
 
-                <div className="logement__carousel">
-    <img
-        className="logement__img"
-        src={logement.pictures[currentIndex]}
-        alt={logement.title}
-    />
-
-    {logement.pictures.length > 1 && (
-        <>
-            <div className="logement__arrow logement__arrow--left" onClick={prevSlide}>
-                <i className="fa-solid fa-chevron-left"></i>
-            </div>
-
-            <div className="logement__arrow logement__arrow--right" onClick={nextSlide}>
-                <i className="fa-solid fa-chevron-right"></i>
-            </div>
-
-            <p className="logement__counter">
-                {currentIndex + 1} / {logement.pictures.length}
-            </p>
-        </>
-    )}
-</div>
+              <Carousel pictures={logement.pictures} title={logement.title} />
 
                 <div className="logement__info">
 

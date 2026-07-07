@@ -12,7 +12,6 @@ const Collapse = ({ title, content }) => {
         onClick={() => setIsOpen(!isOpen)} >
       
        <span>{title}</span>
-
         <i
           className={`fa-solid fa-chevron-up collapse__arrow ${isOpen ? "open" : ""}`}
         ></i>
